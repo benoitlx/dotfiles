@@ -8,8 +8,8 @@ local highlights = require "custom.highlights"
 local ascii = require "custom.ascii"
 
 M.ui = {
-  theme = "onenord",
-  theme_toggle = { "onenord", "everforest_light" },
+  theme = "solarized_dark",
+  theme_toggle = { "solarized_dark", "everforest_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
