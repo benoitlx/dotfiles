@@ -843,3 +843,6 @@ $env.config = {
 
 # Starship Configuration
 use ~/.cache/starship/init.nu
+
+# set SHELL variable to /usr/bin/nu
+$env.SHELL = /usr/bin/nu
