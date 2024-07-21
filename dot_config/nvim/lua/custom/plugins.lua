@@ -101,7 +101,7 @@ local plugins = {
   {
     "edluffy/specs.nvim",
     config = function()
-      require('specs').setup{ 
+      require('specs').setup{
           show_jumps  = true,
           min_jump = 30,
           popup = {
@@ -119,7 +119,14 @@ local plugins = {
           },
       }
     end
-  }
+  },
+
+  {
+    "LhKipp/nvim-nu",
+    config = function()
+      require('nvim-nu').setup()
+    end
+  },
 
 }
 

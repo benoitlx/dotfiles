@@ -263,10 +263,6 @@ local default_plugins = {
     end,
   },
 
-  -- Nvim Cellular Automata
-  {
-    "eandrju/cellular-automaton.nvim",
-  },
 }
 
 local config = require("core.utils").load_config()
