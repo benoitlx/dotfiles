@@ -1,3 +1,10 @@
 # dotfiles
 
-It's only my neovim conf for the moment.
+Work in progress
+
+For the momment, it only includes config files for :
+- hyprland
+- neovim
+- kitty
+- starship
+- nushell
