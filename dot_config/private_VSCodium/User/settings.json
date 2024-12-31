@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "vim.normalModeKeyBindings": [],
+    "keyboard.dispatch": "keyCode",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "explorer.confirmDelete": false,
+    "window.titleBarStyle": "custom",
+    "editor.fontLigatures": true,
+    "redhat.telemetry.enabled": false,
+    "git.confirmSync": false,
+    "explorer.confirmDragAndDrop": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace"
+}
