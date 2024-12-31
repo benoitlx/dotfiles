@@ -8,4 +8,5 @@ For the momment, it only includes config files for :
 - kitty
 - starship
 - nushell
+- bash
 - Codium
