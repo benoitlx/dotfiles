@@ -16,5 +16,6 @@
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily"
     ],
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace"
+    "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace ",
+    "terminal.integrated.fontLigatures": true
 }
