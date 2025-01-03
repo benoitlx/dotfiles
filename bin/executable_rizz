@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+gum style --padding "1 5" --border double --border-foreground 212 "Cool linux command 😎"
+
+bin=$(gum choose "cbonsai -l" "pipes.sh" "r-matrix" "nyancat" "asciiquarium")
+$bin
