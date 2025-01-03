@@ -31,3 +31,5 @@ PATH="$PATH:~/bin/"
 eval "$(starship init bash)"
 
 export EDITOR=nvim
+
+fastfetch
