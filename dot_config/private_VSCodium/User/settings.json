@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Rosé Pine Moon",
     "vim.normalModeKeyBindings": [],
     "keyboard.dispatch": "keyCode",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
@@ -17,5 +17,8 @@
         "editor.fontFamily"
     ],
     "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace ",
-    "terminal.integrated.fontLigatures": true
+    "terminal.integrated.fontLigatures": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Rosé Pine Moon",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte"
 }
