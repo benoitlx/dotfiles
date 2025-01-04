@@ -2,5 +2,34 @@
 
 gum style --padding "1 5" --border double --border-foreground 212 "Cool linux command 😎"
 
-bin=$(gum choose "cbonsai -l" "pipes.sh" "r-matrix" "nyancat" "asciiquarium")
-$bin
+bin=$(gum choose "cbonsai -l" "pipes.sh" "r-matrix" "nyancat" "asciiquarium" "sl" "cowsay" "telnet telehack.com" "yes" "cacafire" "telnet mapscii.me" "curl parrot.live" "oneko -dog" "gum confirm && :(){ :|: & };: || echo You\'re definitly wiser than me !")
+
+case $bin in
+  "cowsay")
+    type=$(gum choose "random" "dog" "pony" "cow")
+    case $type in
+      "random")
+        fortune | cowsay -r | lolcat
+        ;;
+      "dog")
+        dog_type=$(gum choose "default" "gsd" "running" "sit" "small")
+        fortune | dogsay -d $dog_type | lolcat
+        ;;
+      "pony")
+        fortune | ponysay
+        ;;
+      "cow")
+        fortune | cowsay | lolcat
+        ;;
+      *)
+        echo "Error"
+        ;;
+    esac
+    ;;
+  "yes")
+    yes $(echo "You're amazing ! :heart:" | gum format -t emoji) | lolcat
+    ;;
+  *)
+    eval $bin
+    ;;
+esac
