@@ -4,14 +4,14 @@
 
 pass=$(gum input --password --placeholder "BW Master Password")
 
-if [ -z "$pass" ]; then
+if [[ -z "$pass" ]]; then
     gum style --foreground 212 "No password entered. Exiting"
     exit 1
 fi
 
 session=$(gum spin --spinner points --title "Unlocking Vaultwarden" -- sh -c "BW_PASSWORD=$pass bw unlock --passwordenv BW_PASSWORD --raw 2> /dev/null")
 
-if [ -z "$session" ]; then
+if [[ -z "$session" ]]; then
     gum style --foreground 212 "Wrong Password. Exiting."
     exit 1
 fi
