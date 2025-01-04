@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# Pass the tailscale auth key to wishlist via bitwarden cli
+
+pass=$(gum input --password --placeholder "BW Master Password")
+
+if [ -z "$pass" ]; then
+    gum style --foreground 212 "No password entered. Exiting"
+    exit 1
+fi
+
+session=$(gum spin --spinner points --title "Unlocking Vaultwarden" -- sh -c "BW_PASSWORD=$pass bw unlock --passwordenv BW_PASSWORD --raw 2> /dev/null")
+
+if [ -z "$session" ]; then
+    gum style --foreground 212 "Wrong Password. Exiting."
+    exit 1
+fi
+
+raw_bw_oauth=$(gum spin --spinner points --title "getting ts id and secret" -- sh -c "bw get item tailscale_oauth --session $session --raw")
+id=$(echo "$raw_bw_oauth" | jq -r '.login.username')
+secret=$(echo "$raw_bw_oauth" | jq -r '.login.password')
+
+wishlist --tailscale.net=taild069bb.ts.net --tailscale.client.id="$id" --tailscale.client.secret="$secret"
