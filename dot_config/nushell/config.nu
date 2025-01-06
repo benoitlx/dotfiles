@@ -897,5 +897,7 @@ $env.config = {
     ]
 }
 
+$env.config.show_banner = false
+
 # Starship
 use ~/.cache/starship/init.nu
