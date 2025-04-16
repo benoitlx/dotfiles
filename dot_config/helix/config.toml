@@ -1,9 +1,13 @@
-theme = "gruvbox"
+theme = "gruvbox_transparent"
 
 [editor]
 line-number = "relative"
 scroll-lines = 1
 bufferline = "multiple"
+color-modes = true
 
 [editor.file-picker]
 hidden = false
+
+[editor.soft-wrap]
+enable = true

@@ -1,0 +1,9 @@
+inherits = "gruvbox"
+
+"ui.background" = {} # main background
+"ui.bufferline.background" = {} # upper line of open buffer
+"ui.bufferline" = {} # upper line of open buffer
+"ui.statusline" = {} # status line in the bottom
+"ui.statusline.inactive" = {} # status line in the bottom for non active windows
+"ui.window" = {} # window separator
+"ui.popup.info" = {} # key info popup
