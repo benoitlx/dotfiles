@@ -1,0 +1,9 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+scroll-lines = 1
+bufferline = "multiple"
+
+[editor.file-picker]
+hidden = false
