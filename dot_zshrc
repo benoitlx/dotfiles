@@ -16,3 +16,4 @@ eval "$(starship init zsh)"
 
 # Zsh auto-suggestion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(atuin init zsh)"
