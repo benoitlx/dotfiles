@@ -20,5 +20,6 @@
     "terminal.integrated.fontLigatures": true,
     "window.autoDetectColorScheme": true,
     "workbench.preferredDarkColorTheme": "Rosé Pine Moon",
-    "workbench.preferredLightColorTheme": "Catppuccin Latte"
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "vim.smartRelativeLine": true
 }
