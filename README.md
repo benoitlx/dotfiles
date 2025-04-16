@@ -18,6 +18,6 @@ For the momment, it only includes config files for :
 
 ## TODO
 - [x] manage chezmoi's config
-- [ ] better handling of files externaly modified (see [there](https://www.chezmoi.io/user-guide/manage-different-types-of-file/#handle-configuration-files-which-are-externally-modified))
-- [ ] manage file permission of hypr/scripts (by adding `executable_` prefix)
+- [x] better handling of files externaly modified (see [there](https://www.chezmoi.io/user-guide/manage-different-types-of-file/#handle-configuration-files-which-are-externally-modified))
+- [x] manage file permission of hypr/scripts (by adding `executable_` prefix)
 - [ ] clean the target directory depending on the installed program using `--dry-run` (see [there](https://www.chezmoi.io/user-guide/manage-different-types-of-file/#ensure-that-a-target-is-removed))
