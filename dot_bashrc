@@ -40,7 +40,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export EDITOR=nvim
+export EDITOR=hx
 
 fastfetch
 
