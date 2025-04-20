@@ -5,9 +5,18 @@ line-number = "relative"
 scroll-lines = 1
 bufferline = "multiple"
 color-modes = true
+terminal.command = "kitty"
 
 [editor.file-picker]
 hidden = false
 
 [editor.soft-wrap]
 enable = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "underline"
+select = "underline"
