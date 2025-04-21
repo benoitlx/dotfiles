@@ -1,0 +1,10 @@
+#!/bin/bash
+
+notify-send "Break time !"
+echo "Break" | lolcat
+if [ -n "$1" ]; then
+  timer "$1"m --fullscreen
+else
+  timer 5m --fullscreen
+fi
+notify-send "Work time !"
