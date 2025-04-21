@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kitten @ set-background-opacity 0.3
+zellij -l ~/.config/zellij/layouts/music.kdl
