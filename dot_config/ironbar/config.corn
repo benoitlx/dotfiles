@@ -1,0 +1,43 @@
+let {
+  $tray = { type = "tray" }
+  $clock = {
+    type = "clock"
+    format = "%B %d %H:%M"
+  }
+
+  $sys_info = {
+    type = "sys_info"
+    
+    interval.memory = 30
+    interval.cpu = 1
+    interval.disks = 300
+    interval.temps = 3
+
+    format = [
+      "{cpu_percent}%"
+      "{memory_percent}%"
+      "{temp_c:CPUTIN}°C"
+      "{disk_used@/var}GB"
+    ]
+  }
+
+  $volume = {
+    type = "volume"
+    format = "{icon} {percentage}%"
+    max_volume = 100
+  }
+
+  $left = []
+  $center = [$clock]
+  $right = [$tray $sys_info]
+}
+in {
+  position = "top"
+
+  start = $left
+  center = $center
+  end = $right
+
+  height = 20
+  margin.top = 16
+}

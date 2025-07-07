@@ -1,0 +1,56 @@
+@define-color color_bg #ff0066;
+@define-color toast_bg #222036;
+@define-color font_color #fafafa;
+
+* {
+  font-family: BlexMono Nerd Font;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.background {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.sysinfo .item:nth-child(1) {
+  padding: 0px 10px;
+  color: @font_color;
+  background: @toast_bg;
+  opacity: 0.8;
+}
+
+.sysinfo .item:nth-child(2) {
+  padding: 0px 10px;
+  color: @font_color;
+  background: @toast_bg;
+  opacity: 0.8;
+}
+
+.sysinfo .item:nth-child(3) {
+  padding: 0px 10px;
+  color: @font_color;
+  background: @toast_bg;
+  opacity: 0.8;
+}
+
+.sysinfo .item:nth-child(4) {
+  padding: 0px 10px;
+  margin-right: 10px;
+  color: @font_color;
+  background: @toast_bg;
+  opacity: 0.8;
+}
+
+.clock {
+  background: @toast_bg;
+  color: @font_color;
+  opacity: 0.7;
+}
+
+.tray {
+  background: @toast_bg;
+  padding: 0px 10px;
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
