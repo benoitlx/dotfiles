@@ -1,7 +1,7 @@
-[config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "random"]
-set = true
+# [config.wallpaper]
+# command = "swww"
+# arguments = ["img", "--transition-type", "random"]
+# set = true
 
 [config.custom_keywords]
 candy_font = "Pacifico"
