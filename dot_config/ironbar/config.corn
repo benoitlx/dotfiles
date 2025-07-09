@@ -6,7 +6,7 @@ let {
   $clock = {
     type = "clock"
     format = "%B %d %H:%M:%S"
-    format-popup = ""
+    format_popup = ""
   }
   $battery = {
     type = "upower"
