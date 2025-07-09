@@ -29,7 +29,7 @@
 
 
 # Set dir varialable
-wall_dir="$HOME/Pictures/Wallpapers"
+wall_dir="$HOME/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"
 
