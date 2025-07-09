@@ -6,9 +6,9 @@
 
 @import "colors.css";
 
+/* General */
+
 * {
-  font-family: Pacifico;
-  font-size: 16px;
   border-radius: 10px;
   transition: all 0.2s ease;
 }
@@ -17,41 +17,56 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
+.widget {
+  font-family: BlexMono Nerd Font;
+  font-size: 15px;
+  background: linear-gradient(45deg, @primary, @tertiary);
+  box-shadow: none;
+  border: none;
+  color: @on_primary;
+}
+
+/* SysInfo */
+
 .sysinfo {
   margin-right: 10px;
 }
 .sysinfo .item {
-  font-family: BlexMono Nerd Font;
-  font-size: 15px;
-  padding: 0px 10px;
-  color: @on_primary;
-  background: linear-gradient(45deg, @primary, @tertiary);
+  padding: 0px 2px;
 }
+
+/* Clock */
 
 .clock {
-  color: @on_primary;
-  background: linear-gradient(45deg, @primary, @tertiary);
-  border: none;
-  box-shadow: none;
-
+  font-family: Pacifico;
+  font-size: 16px;
 }
 .clock:hover {
-  background: radial-gradient(@primary, @secondary);
+  background: radial-gradient(@primary, @tertiary);
 }
 .popup-clock .calendar {
-  background: radial-gradient(@primary, @secondary);
+  font-family: Pacifico;
+  font-size: 16px;
+  background: linear-gradient(45deg, @primary, @tertiary);
   color: @on_primary;
   border: none;
 }
+
+/* Tray */
 
 .tray {
   background: linear-gradient(45deg, @primary, @tertiary);
   padding: 0px 10px;
   margin-right: 10px;
 }
-.tray .item {
-  font-family: BlexMono Nerd Font;
-  font-size: 15px;
-  
+
+/* Upower */
+
+.upower {
+  margin-right: 10px;
 }
 
+/* Volume */
+.volume {
+  margin-left: 10px;
+}
