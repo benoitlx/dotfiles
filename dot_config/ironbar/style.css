@@ -1,16 +1,10 @@
-@define-color color_bg #ff0066;
-@define-color toast_bg #222036;
-@define-color font_color #fafafa;
-@define-color start_grad #3f5efb;
-@define-color end_grad #fc466b;
-
 @import "colors.css";
 
 /* General */
 
 * {
   border-radius: 10px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .background {
@@ -20,16 +14,17 @@
 .widget {
   font-family: BlexMono Nerd Font;
   font-size: 15px;
-  background: linear-gradient(45deg, @primary, @tertiary);
+  background: linear-gradient(45deg, @primary_container, @tertiary_container);
   box-shadow: none;
   border: none;
-  color: @on_primary;
+  color: @on_primary_container;
 }
 
 /* SysInfo */
 
 .sysinfo {
   margin-right: 10px;
+  padding: 0px 8px;
 }
 .sysinfo .item {
   padding: 0px 2px;
@@ -42,20 +37,19 @@
   font-size: 16px;
 }
 .clock:hover {
-  background: radial-gradient(@primary, @tertiary);
+  background: radial-gradient(@primary_container, @tertiary_container);
 }
 .popup-clock .calendar {
   font-family: Pacifico;
   font-size: 16px;
-  background: linear-gradient(45deg, @primary, @tertiary);
-  color: @on_primary;
+  background: linear-gradient(45deg, @primary_container, @tertiary_container);
+  color: @on_primary_container;
   border: none;
 }
 
 /* Tray */
 
 .tray {
-  background: linear-gradient(45deg, @primary, @tertiary);
   padding: 0px 10px;
   margin-right: 10px;
 }

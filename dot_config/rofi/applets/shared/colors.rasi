@@ -13,7 +13,7 @@
 /*--------Color definitions------------*/
 
 * {
-       background:       @surface;
+       background:       @primary-container;
        background-alt:   @surface-container-highest;
        background-alpha: @surface-alpha;
        foreground:       @on-surface;

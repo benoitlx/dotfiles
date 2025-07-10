@@ -5,7 +5,6 @@
  *               
  */
 
-
 * {
-    font: "GeistMono Nerd Font Bold 10";
+    font: "GeistMono Nerd Font Bold 11";
 }
