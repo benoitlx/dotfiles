@@ -1,7 +1,6 @@
 let {
   $tray = {
     type = "tray"
-    icon_size = 38
   }
   $clock = {
     type = "clock"
@@ -29,15 +28,33 @@ let {
     ]
   }
 
+  $music = {
+    type = "music"
+    player_type = "mpd"
+  }
+
   $volume = {
     type = "volume"
     format = "{icon} {percentage}%"
     max_volume = 100
   }
 
-  $left = [$volume]
+  $cava = {
+    transition_type = "slide_end"
+    transition_duration = 750
+    name = "cava"
+    type = "script"
+    mode = "watch"
+    cmd = "~/.config/ironbar/scripts/cava"
+  }
+
+  $network = {
+    type = "network_manager"
+  }
+
+  $left = [$music $volume $cava]
   $center = [$clock]
-  $right = [$tray $sys_info $battery]
+  $right = [$tray $sys_info $battery $network]
 }
 in {
   position = "top"

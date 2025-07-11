@@ -17,13 +17,15 @@
   background: linear-gradient(45deg, @primary_container, @tertiary_container);
   box-shadow: none;
   border: none;
+  opacity: 0.9;
+  margin-left: 5px;
+  margin-right: 5px;
   color: @on_primary_container;
 }
 
 /* SysInfo */
 
 .sysinfo {
-  margin-right: 10px;
   padding: 0px 8px;
 }
 .sysinfo .item {
@@ -51,7 +53,6 @@
 
 .tray {
   padding: 0px 10px;
-  margin-right: 10px;
 }
 
 /* Upower */
@@ -62,5 +63,12 @@
 
 /* Volume */
 .volume {
+}
+
+#cava {
+  padding: 0px 20px;
+}
+
+.music {
   margin-left: 10px;
 }
