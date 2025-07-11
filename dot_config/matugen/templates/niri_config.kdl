@@ -591,7 +591,8 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+W { spawn "wallSelect.sh"; }
+    Mod+Shift+W { spawn "wallSelect.sh" "--light"; }
+    Mod+Shift+X { spawn "wallSelect.sh" "--dark"; }
 }
 
 layer-rule {
