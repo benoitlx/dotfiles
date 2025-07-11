@@ -39,7 +39,7 @@ window {
 mainbox {
     enabled:                     true;
     children:                    [ "inputbar", "listview" ];
-    background-color:            @background;
+    background-color:            @background-alpha;
 }
 
 
