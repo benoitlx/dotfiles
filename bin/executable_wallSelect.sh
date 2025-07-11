@@ -125,7 +125,7 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
 
 # SWWW Config
 FPS=60
-TYPE="any"
+TYPE="random"
 DURATION=2
 BEZIER=".43,1.19,1,.4"
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
@@ -140,5 +140,5 @@ swww query || swww-daemon --format xrgb
 
 # Run matugen script
 sleep 0.5
-[[ -n "$wall_selection" ]] && "matugenMagick.sh" --dark
+[[ -n "$wall_selection" ]] && "matugenMagick.sh" "$@"
 

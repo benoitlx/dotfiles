@@ -17,13 +17,15 @@ wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
 # generate matugen colors
 if [ "$1" == "--light" ]; then
   matugen image "$wallpaper_path" -m "light" --show-colors
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 else
   matugen image "$wallpaper_path" -m "dark" --show-colors
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 fi 
 
 # set gtk theme
-gsettings set org.gnome.desktop.interface gtk-theme ""
-gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+# gsettings set org.gnome.desktop.interface gtk-theme ""
+# gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 
 #-------Imagemagick magick 👀--------------#
 wait $!
