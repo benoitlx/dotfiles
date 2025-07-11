@@ -50,8 +50,12 @@ At this point all the softwares needed to reproduce my setup are available on yo
 
 - Apply a color theme and set a wallpaper -> `wallSelect.sh`
 - générer une clée ssh
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 - firefox -> synchro -> bitwarden
-- Connexion discord whatsapp finamp ...
+- `tailscale login`
+- Connexion discord whatsapp finamp thunderbird ...
 - setup backup
 
 ## Update
