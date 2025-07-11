@@ -19,3 +19,17 @@ post_hook = "ironbar load-css ~/.config/ironbar/colors.css"
 [templates.rofi]
 input_path = "./templates/matugen-rofi.rasi"
 output_path = "~/.config/rofi/matugen/matugen-rofi.rasi"
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/matugen_kitty.conf'
+output_path = '~/.config/kitty/matugen/colors-matugen.conf'
+
+# Gtk3
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+# Gtk4
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
