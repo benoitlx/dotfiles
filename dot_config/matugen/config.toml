@@ -14,7 +14,7 @@ output_path = "~/.config/niri/config.kdl"
 [templates.ironbar]
 input_path = "./templates/colors.css"
 output_path = "~/.config/ironbar/colors.css"
-post_hook = "ironbar load-css ~/.config/ironbar/colors.css"
+post_hook = "ironbar reload"
 
 [templates.rofi]
 input_path = "./templates/matugen-rofi.rasi"

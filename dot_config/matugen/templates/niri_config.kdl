@@ -1,4 +1,3 @@
-
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -7,6 +6,7 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
 input {
     keyboard {
         xkb {
@@ -175,7 +175,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         
-         active-gradient from="{{ colors.primary_fixed_dim.default.hex }}" to="{{ colors.tertiary.default.hex }}" angle=45
+         active-gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.

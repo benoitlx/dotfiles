@@ -12,14 +12,17 @@ cache_dir="$HOME/.cache/swww/"
 # current_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 current_monitor=$(niri msg --json focused-output | jq '.name' | tr -d '"')
 cache_file="$cache_dir$current_monitor"
-wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
+echo "cache-file: $cache_file \n"
+wallpaper_path=$(cat "$cache_file" | strings | grep -v 'Lanczos3' | head -n 1)
+# wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
 
+echo "wallpaper path : $wallpaper_path\n"
 # generate matugen colors
 if [ "$1" == "--light" ]; then
-  matugen image "$wallpaper_path" -m "light" --show-colors
+  matugen image "$wallpaper_path" -m "light" --show-colors --debug
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 else
-  matugen image "$wallpaper_path" -m "dark" --show-colors
+  matugen image "$wallpaper_path" -m "dark" --show-colors --debug
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 fi 
 
