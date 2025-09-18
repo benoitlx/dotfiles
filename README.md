@@ -35,6 +35,8 @@ While you can use this repo with any distro, downloading these dotfiles along my
 
 But for now you can install any `rpm-ostree` based distro (such as Silverblue or Bazzite) and run :
 
+- setup encryption (while setting up the `rpm-ostree` distro)
+
 `rpm-ostree rebase ostree-unverified-registry:ghcr.io/benoitlx/niri:br-niri-42`
 
 `systemctl reboot`
@@ -48,6 +50,7 @@ At this point all the softwares needed to reproduce my setup are available on yo
 
 ## Post Install
 
+- Enroll MOK key if using secure-boot (see ublue doc)
 - Apply a color theme and set a wallpaper -> `wallSelect.sh`
 - générer une clée ssh
 
@@ -61,9 +64,11 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generati
 ## Update
 
 - you need to rebuild your image (e.g. with the CI)
-- run `rpm-ostree upgrade`
+- run `rpm-ostree upgrade` (todo: look at the difference with `bootc upgrade`)
 
 ## Daily maintenance
+
+- handy script: `ujust`
 
 Recommended way of adding software :
 - flatpak for graphical app (see distrobox if your app is not package as a flatpak)
