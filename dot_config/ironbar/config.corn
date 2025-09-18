@@ -8,7 +8,7 @@ let {
     format_popup = ""
   }
   $battery = {
-    type = "upower"
+    type = "battery"
     format = "{percentage}%"
   }
 
@@ -51,10 +51,35 @@ let {
   $network = {
     type = "network_manager"
   }
+  $ble = {
+    type = "bluetooth"
+    icon_size = 32
+    format.not_found = ""
+    format.disabled = " Off"
+    format.enabled = " On"
+    format.connected = " {device_alias}"
+    format.connected_battery = " {device_alias} • {device_battery_percent}%"
+    popup.scrollable = true
+    popup.header = " Enable Bluetooth"
+    popup.disabled = "{adapter_status}"
+    popup.device.header = "{device_alias}"
+    popup.device.header_battery = "{device_alias}"
+    popup.device.footer = "{device_status}"
+    popup.device.footer_battery = "{device_status} • Battery {device_battery_percent}%"
+    adapter_status.not_found = "No Bluetooth adapters found"
+    adapter_status.enabled = "Bluetooth enabled"
+    adapter_status.enabling = "Enabling Bluetooth..."
+    adapter_status.disabled = "Bluetooth disabled"
+    adapter_status.disabling = "Disabling Bluetooth..."
+    device_status.connected = "Connected"
+    device_status.connecting = "Connecting..."
+    device_status.disconnected = "Disconnect"
+    device_status.disconnecting = "Disconnecting..."
+  }
 
-  $left = [$music $volume $cava]
+  $left = [$volume $cava]
   $center = [$clock]
-  $right = [$tray $sys_info $battery $network]
+  $right = [$tray $sys_info $battery $network $ble]
 }
 in {
   position = "top"
