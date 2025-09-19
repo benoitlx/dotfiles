@@ -149,6 +149,8 @@ layout {
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
+    empty-workspace-above-first
+
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
@@ -204,7 +206,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -238,6 +240,11 @@ layout {
         color "#0007"
     }
 
+    insert-hint {
+        // off
+        gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45 relative-to="workspace-view"
+    }
+
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
     // Left and right struts will cause the next window to the side to always be visible.
@@ -249,6 +256,7 @@ layout {
         // top 64
         // bottom 64
     }
+
 }
 
 // Add lines like this to spawn processes at startup.
@@ -617,6 +625,7 @@ layer-rule {
 // Indicate screencasted windows with red colors.
 window-rule {
     match is-window-cast-target=true
+    match is-urgent=true
 
     focus-ring {
         active-color "#f38ba8"
@@ -637,14 +646,34 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id=r#"^finamp$"#
+
+    open-floating true
+    default-floating-position x=100 y=0 relative-to="left"
+    default-column-width { fixed 500; }
+    default-window-height { fixed 600; }
+}
+
+// window-rule {
+//     match is-floating=true
+
+//     baba-is-float true
+// }
+
 // Block out password managers from screencasts.
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id=r#"^com\.belmoussaoui\.Authenticator$"#
+    match title=r#"^.*Mozilla Firefox Private Browsing.*$"#
     match title=r#"^.*Bitwarden.*$"#
 
     block-out-from "screencast"
+}
+
+overview {
+    backdrop-color "{{colors.surface_container_highest.default.hex}}"
 }
 
 // debug {
