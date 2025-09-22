@@ -72,3 +72,15 @@
 .music {
   margin-left: 10px;
 }
+
+.notifications .button {
+  margin-right: 5px;
+  background: linear-gradient(45deg, @primary_container, @tertiary_container);
+  box-shadow: none;
+  border: none;
+  padding: 0px 20px 0px 10px;
+}
+
+.notifications .count {
+  padding: 0px 10px;
+}

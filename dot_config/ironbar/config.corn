@@ -11,6 +11,14 @@ let {
     type = "battery"
     format = "{percentage}%"
   }
+  $workspaces = {
+    type = "workspaces"
+    name_map.1 = "main"
+  }
+  $notifications = {
+    type = "notifications"
+    show_count = true
+  }
 
   $sys_info = {
     type = "sys_info"
@@ -79,7 +87,7 @@ let {
 
   $left = [$volume $cava]
   $center = [$clock]
-  $right = [$tray $sys_info $battery $network $ble]
+  $right = [$tray $sys_info $battery $network $ble $notifications]
 }
 in {
   position = "top"
