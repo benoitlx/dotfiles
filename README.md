@@ -1,6 +1,6 @@
 # My personnal dotfiles
 
-> [!warning] Disclaimer
+> [!warning]
 > This repository is a continuous work in progress and some config files may be poorly maintained !
 
 My dotfiles are managed with [`chezmoi`](https://www.chezmoi.io/), a handy tool to manage configuration files against a remote repository !
