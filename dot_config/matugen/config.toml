@@ -33,3 +33,20 @@ output_path = '~/.config/gtk-3.0/gtk.css'
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/matugen-gtk.css'
 output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.swaync]
+input_path = './templates/swaync_style.css'
+output_path = '~/.config/swaync/style.css'
+post_hook = "swaync-client -rs"
+
+[templates.anyrun]
+input_path = './templates/matugen-anyrun.css'
+output_path = '~/.config/anyrun/style.css'
+
+[templates.rio]
+input_path = './templates/matugen-rio.toml'
+output_path = '~/.config/rio/config.toml'
+
+[templates.riocolor]
+input_path = './templates/matugen-rio-color.toml'
+output_path = '~/.config/rio/themes/colors.toml'

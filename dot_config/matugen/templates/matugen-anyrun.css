@@ -1,0 +1,77 @@
+* {
+  /* transition: all 0.3s ease; */
+  all: unset;
+  font-family: Maple Mono NF;
+  font-style: italic;
+  font-weight: 650;
+}
+
+window {
+  background: transparent;
+}
+
+box.main {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 4px solid linear-gradient(45, {{colors.primary_fixed_dim.default.hex}}, {{colors.tertiary.default.hex}});
+  /* border: 4px solid @theme_selected_bg_color; */
+  background-color: {{colors.primary_container.default.hex}};
+  /* box-shadow: 0 0 5px {{colors.shadow.default.hex}}; */
+}
+
+
+text {
+  min-height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.matches {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+
+box.plugin:first-child {
+  margin-top: 5px;
+}
+
+box.plugin.info {
+  min-width: 200px;
+}
+
+list.plugin {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+label.match.description {
+  font-size: 10px;
+}
+
+label.plugin.info {
+  font-size: 14px;
+}
+
+label, text {
+  color: {{colors.on_primary_container.default.hex}};
+}
+
+.match {
+  background: transparent;
+}
+
+.match:selected {
+  border-left: 4px solid {{colors.tertiary.default.hex}};
+  background: transparent;
+  animation: fade 0.1s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
