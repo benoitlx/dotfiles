@@ -10,6 +10,8 @@ let {
   $battery = {
     type = "battery"
     format = "{percentage}%"
+    disable_popup = true
+    tooltip = "{{cat /sys/class/power_supply/BAT0/status}}"
   }
   $workspaces = {
     type = "workspaces"
@@ -19,7 +21,6 @@ let {
     type = "notifications"
     show_count = true
   }
-
   $sys_info = {
     type = "sys_info"
     
@@ -27,24 +28,33 @@ let {
     interval.cpu = 1
     interval.disks = 300
     interval.temps = 3
+    interval.network = 1
 
     format = [
-      "{cpu_percent}%"
-      "{memory_percent}%"
-      "{temp_c:CPUTIN}°C"
-      "{disk_used@/var}GB"
+      " {cpu_percent}%"
+      " {memory_percent}%"
+      " {temp_c:CPUTIN}°C"
+      " {disk_used@/var}GB"
+      "󰇚{net_down@enp3s0}󰕒{net_up@enp3s0}"
     ]
+
+    on_click_left = "kitty btop"
   }
 
   $music = {
     type = "music"
-    player_type = "mpd"
+    player_type = "mpris"
+    truncate = "end"
   }
 
   $volume = {
     type = "volume"
     format = "{icon} {percentage}%"
+    truncate = "end"
     max_volume = 100
+    on_scroll_up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"
+    on_scroll_down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"
+    smooth_scroll_speed = 0.08
   }
 
   $cava = {
@@ -54,6 +64,8 @@ let {
     type = "script"
     mode = "watch"
     cmd = "~/.config/ironbar/scripts/cava"
+
+    show_if = "exit 0"
   }
 
   $network = {
@@ -61,31 +73,11 @@ let {
   }
   $ble = {
     type = "bluetooth"
-    icon_size = 32
-    format.not_found = ""
-    format.disabled = " Off"
-    format.enabled = " On"
-    format.connected = " {device_alias}"
-    format.connected_battery = " {device_alias} • {device_battery_percent}%"
-    popup.scrollable = true
-    popup.header = " Enable Bluetooth"
-    popup.disabled = "{adapter_status}"
-    popup.device.header = "{device_alias}"
-    popup.device.header_battery = "{device_alias}"
-    popup.device.footer = "{device_status}"
-    popup.device.footer_battery = "{device_status} • Battery {device_battery_percent}%"
-    adapter_status.not_found = "No Bluetooth adapters found"
-    adapter_status.enabled = "Bluetooth enabled"
-    adapter_status.enabling = "Enabling Bluetooth..."
-    adapter_status.disabled = "Bluetooth disabled"
-    adapter_status.disabling = "Disabling Bluetooth..."
-    device_status.connected = "Connected"
-    device_status.connecting = "Connecting..."
-    device_status.disconnected = "Disconnect"
-    device_status.disconnecting = "Disconnecting..."
+    popup.scrollable = false
+    popup.header = "Toggle"
   }
 
-  $left = [$volume $cava]
+  $left = [$volume $cava $music]
   $center = [$clock]
   $right = [$tray $sys_info $battery $network $ble $notifications]
 }
@@ -98,4 +90,8 @@ in {
 
   height = 20
   margin.top = 10
+
+  popup_autohide = true
+
+  icon_theme = "Adwaita"
 }

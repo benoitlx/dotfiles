@@ -5,82 +5,170 @@
 * {
   border-radius: 10px;
   transition: all 0.3s ease;
+  font-family: Maple Mono NF;
+  font-style: italic;
+  font-weight: 650;
 }
 
 .background {
   background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
 }
 
 .widget {
-  font-family: BlexMono Nerd Font;
   font-size: 15px;
-  background: linear-gradient(45deg, @primary_container, @tertiary_container);
   box-shadow: none;
   border: none;
-  opacity: 0.9;
+  opacity: 0.8;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: @primary_container;
   color: @on_primary_container;
+  /* backdrop-filter: blur(10px); */
 }
 
-/* SysInfo */
 
-.sysinfo {
-  padding: 0px 8px;
-}
-.sysinfo .item {
-  padding: 0px 2px;
+.popup, contents {
+  background-color: @surface_container_highest;
+  /* backdrop-filter: blur(10px); */
+  color: @on_surface;
+  border: none;
+  /* opacity: 0.8; */
 }
 
-/* Clock */
+#bar #start {
+  margin-left: 5px;
+}
 
-.clock {
-  font-family: Pacifico;
-  font-size: 16px;
+#bar #end {
+  margin-right: 5px;
 }
-.clock:hover {
-  background: radial-gradient(@primary_container, @tertiary_container);
+
+*:hover {
+  opacity: 0.99;
 }
-.popup-clock .calendar {
-  font-family: Pacifico;
-  font-size: 16px;
-  background: linear-gradient(45deg, @primary_container, @tertiary_container);
+
+.item,
+.button
+{
+  background: @primary_container;
   color: @on_primary_container;
   border: none;
+  box-shadow: none;
 }
 
-/* Tray */
-
-.tray {
-  padding: 0px 10px;
-}
-
-/* Upower */
-
-.upower {
-  margin-right: 10px;
-}
-
-/* Volume */
-.volume {
-}
-
-#cava {
-  padding: 0px 20px;
-}
-
-.music {
-  margin-left: 10px;
-}
-
-.notifications .button {
-  margin-right: 5px;
-  background: linear-gradient(45deg, @primary_container, @tertiary_container);
+button {
+  background: @tertiary;
+  color: @on_tertiary;
   box-shadow: none;
   border: none;
+}
+
+.switch:checked, highlight {
+  background: @tertiary;
+}
+
+.switch {
+  background: @tertiary_container;
+}
+
+tooltip {
+  border: none;
+}
+
+tooltip box {
+  background: @surface_container_highest;
+  color: @on_surface;
+  padding: 0.6em;
+}
+
+
+/* Tray */
+.tray .item {
+  padding: 0.1em;
+}
+
+.tray {
+  padding: 0px 10px 0px 10px;
+}
+
+arrow {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+/* Notifications */
+.notifications .button {
   padding: 0px 20px 0px 10px;
 }
 
 .notifications .count {
-  padding: 0px 10px;
+  padding: 0px 3px 0px;
+}
+
+/* SysInfo */
+.sysinfo {
+  padding: 0px 4px;
+}
+
+/* Battery */
+.battery {
+  
+}
+
+/* Bluetooth */
+.popup-bluetooth {
+  padding: 1em;
+}
+
+.popup-bluetooth .header .label {
+  margin-left: 30px;
+}
+
+.popup-bluetooth .devices {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.popup-bluetooth .devices .box .device {
+  padding: 8px 0px 8px 0px;
+}
+
+/* Volume */
+.popup-volume .device-box .slider {
+  transform: rotate(90deg);
+  margin-top: -100px;
+  margin-bottom: -100px;
+}
+
+.popup-volume .device-box .btn-mute{
+  margin-top: -30px;
+  margin-bottom: -0px;
+  margin-right: 220px;
+  margin-left: 220px;
+  /* padding: -30px 220px 0px 220px; */
+}
+
+.popup-volume .device-box .device-selector {
+  margin-bottom: -30px;
+}
+
+/* Network */
+.network_manager {
+  padding: 8px;
+}
+
+/* Clock */
+.popup-clock .calendar {
+  background: @surface_container_highest;  
+  color: @on_surface;
+}
+
+.today {
+  box-shadow: 1px 1px 1px 1px @shadow;
+}
+
+label:selected {
+  background: @tertiary;
+  outline: none;
 }
