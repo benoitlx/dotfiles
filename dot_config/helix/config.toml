@@ -1,4 +1,5 @@
-theme = "gruvbox_transparent"
+# theme = "gruvbox_transparent"
+theme = "github_dark_transparent"
 
 [editor]
 line-number = "relative"
@@ -20,3 +21,6 @@ display-inlay-hints = true
 insert = "bar"
 normal = "underline"
 select = "underline"
+
+[keys.normal]
+"C-p" = ':lsp-workspace-command tinymist.pinMain "%sh{realpath %{buffer_name}}"'
