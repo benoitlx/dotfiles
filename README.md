@@ -28,6 +28,9 @@ Below are the managed softwares:
 | zellij | minimal maintainance |
 | bashrc | minimal maintainance |
 | zsh config | not maintained |
+| swaync | maintained |
+| rio | may be maintained |
+| anyrun | may be maintained |
 
 This repository also include some usefull scipts (and other not so usefull) in [`bin/`](./bin) !
 
