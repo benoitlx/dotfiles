@@ -271,8 +271,8 @@ spawn-at-startup "ironbar"
 spawn-at-startup "swaync"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "flatpak" "run" "org.openrgb.OpenRGB"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+spawn-at-startup "ibus start"
 
 environment {
     DISPLAY ":0"
