@@ -1,0 +1,10 @@
+// Generated from ~/.config/matugen/templates/niri_colors.kdl with matugen
+
+layout {
+	focus-ring {
+		active-gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45
+	}
+	insert-hint {
+        gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45 relative-to="workspace-view"
+	}
+}

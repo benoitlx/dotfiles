@@ -8,8 +8,8 @@ candy_font = "Pacifico"
 prog_font = "FiraCode Nerd Font"
 
 [templates.niri]
-input_path = "./templates/niri_config.kdl"
-output_path = "~/.config/niri/config.kdl"
+input_path = "./templates/niri_colors.kdl"
+output_path = "~/.config/niri/colors.kdl"
 
 [templates.ironbar]
 input_path = "./templates/colors.css"

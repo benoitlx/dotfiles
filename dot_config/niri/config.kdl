@@ -7,6 +7,8 @@
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
+include "colors.kdl"
+
 input {
     keyboard {
         xkb {
@@ -177,7 +179,6 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         
-         active-gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -242,7 +243,6 @@ layout {
 
     insert-hint {
         // off
-        gradient from="{{colors.primary_fixed_dim.default.hex}}" to="{{colors.tertiary.default.hex}}" angle=45 relative-to="workspace-view"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
