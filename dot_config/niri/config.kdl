@@ -267,12 +267,12 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "ironbar"
-spawn-at-startup "swaync"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
-spawn-at-startup "ibus start"
+// spawn-at-startup "ironbar" // bluebuild - to enable
+// spawn-at-startup "swaync" // to enable
+// spawn-at-startup "swww-daemon" // bluebuild - to enable
+// spawn-at-startup "xwayland-satellite" // to enable
+// spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1" // enable system wide polkit.service
+// spawn-at-startup "ibus start"
 
 environment {
     DISPLAY ":0"
