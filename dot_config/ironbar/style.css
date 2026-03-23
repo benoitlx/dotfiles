@@ -135,22 +135,9 @@ arrow {
 }
 
 /* Volume */
-.popup-volume .device-box .slider {
-  transform: rotate(90deg);
-  margin-top: -100px;
-  margin-bottom: -100px;
-}
-
 .popup-volume .device-box .btn-mute{
-  margin-top: -30px;
-  margin-bottom: -0px;
-  margin-right: 220px;
-  margin-left: 220px;
-  /* padding: -30px 220px 0px 220px; */
-}
-
-.popup-volume .device-box .device-selector {
-  margin-bottom: -30px;
+  margin-right: 160px;
+  margin-left: 160px;
 }
 
 /* Network */
