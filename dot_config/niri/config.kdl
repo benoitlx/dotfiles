@@ -104,6 +104,12 @@ output "Red Hat, Inc. QEMU Monitor Unknown" {
     position x=1280 y=0
 }
 
+output "Microstep MAG 321CUP 0x01010101" {
+    mode "2560x1440@144.000"
+    scale 1.1
+    transform "normal"
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
