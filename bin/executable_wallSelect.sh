@@ -51,6 +51,7 @@ scale_factor=$(niri msg --json focused-output | jq '.logical.scale')
 icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallSelect.rasi -theme-str $rofi_override"
+# rofi_command="anyrun --plugins libstdin.so"
 
 # Detect number of cores and set a sensible number of jobs
 get_optimal_jobs() {
@@ -131,12 +132,12 @@ BEZIER=".43,1.19,1,.4"
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # initiate swww if not running
-swww query || swww-daemon --format argb
+awww query || awww-daemon --format argb
 
 echo $wall_selection
 
 # Set wallpaper
-[[ -n "$wall_selection" ]] && swww img -o "$focused_monitor" "${wall_dir}/${wall_selection}" $SWWW_PARAMS;
+[[ -n "$wall_selection" ]] && awww img -o "$focused_monitor" "${wall_dir}/${wall_selection}" $SWWW_PARAMS;
 
 echo "Next script"
 
