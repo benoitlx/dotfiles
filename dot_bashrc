@@ -23,7 +23,6 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-. "$HOME/.cargo/env"
 
 PATH="$PATH:~/bin/"
 
@@ -54,5 +53,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
-rbw unlock
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
+. "$HOME/.cargo/env"
