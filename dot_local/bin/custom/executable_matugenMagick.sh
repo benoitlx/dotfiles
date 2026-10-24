@@ -20,10 +20,12 @@ echo "wallpaper path : $wallpaper_path"
 if [ "$1" == "--light" ]; then
   matugen image "$wallpaper_path" -m "light" --source-color-index 0 --show-colors --debug
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+  "$HOME/.local/bin/pywalfox" light
 else
   matugen image "$wallpaper_path" -m "dark" --source-color-index 0 --show-colors --debug
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-fi 
+  "$HOME/.local/bin/pywalfox" dark
+fi
 
 # set gtk theme
 # gsettings set org.gnome.desktop.interface gtk-theme ""
