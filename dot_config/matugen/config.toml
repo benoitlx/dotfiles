@@ -50,3 +50,9 @@ output_path = '~/.config/rio/config.toml'
 [templates.riocolor]
 input_path = './templates/matugen-rio-color.toml'
 output_path = '~/.config/rio/themes/colors.toml'
+
+# Firefox (pywalfox reads ~/.cache/wal/colors.json)
+[templates.pywalfox]
+input_path = './templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = "/var/home/bleroux/.local/bin/pywalfox update"

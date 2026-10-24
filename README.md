@@ -103,6 +103,7 @@ CLI tool :  distrobox
 - [ ] add a config file with my vaultwarden address and some global metadata (will be usefull to automate some post install steps)
 - [ ] find a way to deploy distroboxes with custom softwares in it (e.g. softwares for my rizz bin)
 - [ ] find a way to automaticaly deploy a last maintained date alongside all the softwares in this README
+- [ ] pywallfox for flatpak firefox need override to work with my script `flatpak override --user --talk-name=org.freedesktop.Flatpak org.mozilla.firefox`
 
 ## Acknowledgments
 
