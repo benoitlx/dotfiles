@@ -280,6 +280,7 @@ layout {
 // spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1" // enable system wide polkit.service
 // spawn-at-startup "ibus start"
 spawn-at-startup "~/.cargo/bin/rbw" "unlock"
+spawn-at-startup "tailscale" "systray"
 
 environment {
     DISPLAY ":0"
@@ -622,8 +623,8 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+W { spawn "wallSelect.sh" "--light"; }
-    Mod+Shift+X { spawn "wallSelect.sh" "--dark"; }
+    Mod+Shift+W { spawn "/var/home/bleroux/.local/bin/custom/wallSelect.sh" "--light"; }
+    Mod+Shift+X { spawn "/var/home/bleroux/.local/bin/custom/wallSelect.sh" "--dark"; }
 }
 
 layer-rule {

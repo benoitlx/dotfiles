@@ -6,8 +6,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/.local/bin/custom:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/.local/bin/custom:$PATH"
 fi
 export PATH
 
@@ -24,7 +24,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-PATH="$PATH:~/bin/"
 
 # StarShip
 eval "$(starship init bash)"
@@ -54,3 +53,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 . "$HOME/.cargo/env"
+
+alias ssh="kitty +kitten ssh"
