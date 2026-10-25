@@ -1,0 +1,12 @@
+[Unit]
+Description=mate-polkit authentication agent
+# The packaged autostart entry is OnlyShowIn=MATE, so it never starts under niri
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/polkit-mate-authentication-agent-1
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
