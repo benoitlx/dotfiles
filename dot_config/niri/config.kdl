@@ -279,7 +279,7 @@ layout {
 // spawn-at-startup "xwayland-satellite" // to enable
 // spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1" // enable system wide polkit.service
 // spawn-at-startup "ibus start"
-spawn-at-startup "~/.cargo/bin/rbw" "unlock"
+// rbw unlock is started by rbw-unlock.service (systemd user unit)
 spawn-at-startup "tailscale" "systray"
 
 environment {

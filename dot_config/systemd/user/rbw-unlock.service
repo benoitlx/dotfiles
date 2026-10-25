@@ -1,0 +1,15 @@
+[Unit]
+Description=Unlock the rbw (Bitwarden) vault at login
+# Wait for niri to export WAYLAND_DISPLAY so pinentry-gnome3 can show its window
+PartOf=graphical-session.target
+After=graphical-session.target xwayland-satellite.service
+Requisite=graphical-session.target
+
+[Service]
+Type=oneshot
+# rbw spawns rbw-agent through PATH, and systemd's PATH lacks ~/.cargo/bin
+Environment=PATH=%h/.cargo/bin:/usr/local/bin:/usr/bin
+ExecStart=%h/.cargo/bin/rbw unlock
+
+[Install]
+WantedBy=graphical-session.target
