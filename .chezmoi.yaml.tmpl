@@ -1,2 +1,11 @@
 # cd:
 #   command: /usr/bin/nu
+
+# Private key lives outside the repo, backed up in rbw (entry chezmoi-age-key)
+encryption: "age"
+age:
+  identity: "~/.config/chezmoi/key.txt"
+  recipient: "age1q3zfgfsh8wa83ghdg8usjy0pu7zshctgdv80z26es8w5ffser49q2lt46h"
+
+diff:
+  pager: "delta"
