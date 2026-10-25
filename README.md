@@ -64,7 +64,7 @@ At this point all the softwares needed to reproduce my setup are available on yo
 ## Post Install
 
 - TODO check this section with a clean install (some elements may be misunderstood)
-  - check `rbw login` and `rbw unlock` (it's in barshrc so it will be one of the first thing executed once logged in)
+  - - check `rbw login`, then reboot: `rbw-unlock.service` asks for the master password at login, and `unlock-keyring.service` unlocks the gnome keyring with the `gnome-keyring-login` entry
 
 - Enroll MOK key if using secure-boot (see ublue doc)
 - Apply a color theme and set a wallpaper -> `wallSelect.sh` TOFIX: will only work within a graphical session
@@ -73,6 +73,9 @@ At this point all the softwares needed to reproduce my setup are available on yo
   - [github](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
   - [Bitwarden](https://bitwarden.com/help/ssh-agent/)
   - don't forget to add your public key where needed (in github, on different machines, ...)
+- restore the chezmoi age key from vaultwarden (needed to decrypt `encrypted_*` files, e.g. `.ssh/config`)
+  - `(umask 077; rbw get chezmoi-age-key > ~/.config/chezmoi/key.txt)`
+  - `chezmoi apply` (encrypted files are ignored until the key is there, see `.chezmoiignore`)
 - firefox -> synchro -> bitwarden
 - `tailscale login`
 - Connexion discord whatsapp finamp thunderbird ...
