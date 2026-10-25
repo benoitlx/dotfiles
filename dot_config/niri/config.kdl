@@ -284,6 +284,8 @@ spawn-at-startup "tailscale" "systray"
 
 environment {
     DISPLAY ":0"
+    // niri inherits systemd's PATH (/usr/local/bin:/usr/bin); no $VAR expansion here
+    PATH "/var/home/bleroux/.cargo/bin:/var/home/bleroux/.local/bin:/var/home/bleroux/.local/bin/custom:/usr/local/sbin:/usr/local/bin:/usr/bin"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

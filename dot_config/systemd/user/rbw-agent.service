@@ -1,0 +1,11 @@
+[Unit]
+Description=rbw (Bitwarden) agent, also serving as SSH agent
+PartOf=graphical-session.target
+After=graphical-session.target xwayland-satellite.service
+
+[Service]
+ExecStart=%h/.cargo/bin/rbw-agent --no-daemonize
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+"""Unlock the GNOME "login" keyring with its password stored in rbw.
+
+Uses gnome-keyring's UnlockWithMasterPassword D-Bus method, so no prompt
+is shown and the running (D-Bus activated) daemon is left in place.
+"""
+import subprocess
+import sys
+
+import gi
+
+gi.require_version("Gio", "2.0")
+from gi.repository import Gio, GLib
+
+RBW_ENTRY = "gnome-keyring-login"
+BUS_NAME = "org.freedesktop.secrets"
+SERVICE = "/org/freedesktop/secrets"
+COLLECTION = "/org/freedesktop/secrets/collection/login"
+
+bus = Gio.bus_get_sync(Gio.BusType.SESSION)
+
+
+def call(path, interface, method, args, reply_type):
+    return bus.call_sync(BUS_NAME, path, interface, method, args,
+                         GLib.VariantType(reply_type),
+                         Gio.DBusCallFlags.NONE, -1, None).unpack()
+
+
+def is_locked():
+    (locked,) = call(COLLECTION, "org.freedesktop.DBus.Properties", "Get",
+                     GLib.Variant("(ss)", ("org.freedesktop.Secret.Collection", "Locked")),
+                     "(v)")
+    return locked
+
+
+if not is_locked():
+    sys.exit(0)
+
+password = subprocess.run(["rbw", "get", RBW_ENTRY], capture_output=True,
+                          check=True).stdout.rstrip(b"\n")
+
+# "plain" session: the password never leaves this D-Bus connection
+_, session = call(SERVICE, "org.freedesktop.Secret.Service", "OpenSession",
+                  GLib.Variant("(sv)", ("plain", GLib.Variant("s", ""))), "(vo)")
+call(SERVICE, "org.gnome.keyring.InternalUnsupportedGuiltRiddenInterface",
+     "UnlockWithMasterPassword",
+     GLib.Variant("(o(oayays))", (COLLECTION, (session, b"", password, "text/plain"))),
+     "()")
+
+if is_locked():
+    sys.exit(f"login keyring still locked: wrong password in rbw entry {RBW_ENTRY!r}?")

@@ -1,0 +1,14 @@
+[Unit]
+Description=Unlock the GNOME login keyring with its password from rbw
+Requires=rbw-unlock.service
+After=rbw-unlock.service graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+# rbw always spawns rbw-agent through PATH, and systemd's PATH lacks ~/.cargo/bin
+Environment=PATH=%h/.cargo/bin:/usr/local/bin:/usr/bin
+ExecStart=%h/.local/bin/custom/unlock-keyring
+
+[Install]
+WantedBy=graphical-session.target
