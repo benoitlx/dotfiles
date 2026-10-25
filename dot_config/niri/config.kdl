@@ -336,7 +336,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"rio"#
+    match app-id=r#"^kitty$"#
 
     opacity 0.9
 }

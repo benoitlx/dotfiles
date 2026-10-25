@@ -23,6 +23,7 @@ output_path = "~/.config/rofi/matugen/matugen-rofi.rasi"
 [templates.kitty]
 input_path = '~/.config/matugen/templates/matugen_kitty.conf'
 output_path = '~/.config/kitty/matugen/colors-matugen.conf'
+post_hook = "pkill -USR1 -x kitty"
 
 # Gtk3
 [templates.gtk3]
@@ -42,14 +43,6 @@ post_hook = "swaync-client -rs"
 [templates.anyrun]
 input_path = './templates/matugen-anyrun.css'
 output_path = '~/.config/anyrun/style.css'
-
-[templates.rio]
-input_path = './templates/matugen-rio.toml'
-output_path = '~/.config/rio/config.toml'
-
-[templates.riocolor]
-input_path = './templates/matugen-rio-color.toml'
-output_path = '~/.config/rio/themes/colors.toml'
 
 # Firefox (pywalfox reads ~/.cache/wal/colors.json)
 [templates.pywalfox]
