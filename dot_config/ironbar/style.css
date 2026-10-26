@@ -3,37 +3,30 @@
 /* General */
 
 * {
-  border-radius: 10px;
-  transition: all 0.3s ease;
   font-family: Maple Mono NF;
   font-style: italic;
   font-weight: 650;
 }
 
 .background {
-  background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(10px);
+  background-color: transparent;
 }
 
+/* alpha() instead of opacity: only the background is translucent, text stays crisp */
 .widget {
   font-size: 15px;
-  box-shadow: none;
-  border: none;
-  opacity: 0.8;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: @primary_container;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+  background-color: alpha(@primary_container, 0.85);
   color: @on_primary_container;
-  /* backdrop-filter: blur(10px); */
+  transition: background-color 0.3s ease;
 }
 
-
-.popup, contents {
-  background-color: @surface_container_highest;
-  /* backdrop-filter: blur(10px); */
-  color: @on_surface;
-  border: none;
-  /* opacity: 0.8; */
+.widget:hover {
+  background-color: @primary_container;
 }
 
 #bar #start {
@@ -44,41 +37,100 @@
   margin-right: 5px;
 }
 
-*:hover {
-  opacity: 0.99;
+.widget .item,
+.widget .button {
+  background: transparent;
+  color: inherit;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
 }
 
-.item,
-.button
-{
-  background: @primary_container;
-  color: @on_primary_container;
-  border: none;
-  box-shadow: none;
+/* Material 3 state layer */
+.widget .button:hover {
+  background: alpha(@on_primary_container, 0.12);
 }
 
 button {
   background: @tertiary;
   color: @on_tertiary;
-  box-shadow: none;
   border: none;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
-.switch:checked, highlight {
-  background: @tertiary;
+button:hover {
+  background: mix(@tertiary, @on_tertiary, 0.12);
 }
 
 .switch {
   background: @tertiary_container;
 }
 
-tooltip {
+.switch:checked,
+highlight {
+  background: @tertiary;
+}
+
+label:selected {
+  background: @tertiary;
+  color: @on_tertiary;
+  outline: none;
+}
+
+arrow {
+  background: transparent;
   border: none;
 }
 
+/* Popups and menus (module popups + tray menus): tinted surface, no borders */
+
+.popup,
+popover > contents {
+  background-color: @secondary_container;
+  color: @on_secondary_container;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px alpha(@shadow, 0.4);
+}
+
+popover > contents {
+  padding: 6px;
+}
+
+popover modelbutton {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: @on_secondary_container;
+}
+
+popover modelbutton:hover,
+popover modelbutton:focus {
+  background: alpha(@on_secondary_container, 0.12);
+}
+
+popover modelbutton:disabled,
+popover modelbutton:disabled label {
+  color: alpha(@on_secondary_container, 0.5);
+}
+
+popover separator {
+  min-height: 1px;
+  margin: 4px 6px;
+  background: alpha(@on_secondary_container, 0.15);
+}
+
+/* style only the tooltip node itself, otherwise GTK draws two shapes */
+tooltip {
+  background: @secondary_container;
+  color: @on_secondary_container;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
 tooltip box {
-  background: @surface_container_highest;
-  color: @on_surface;
+  background: transparent;
   padding: 0.6em;
 }
 
@@ -90,11 +142,6 @@ tooltip box {
 
 .tray {
   padding: 0px 10px 0px 10px;
-}
-
-arrow {
-  background: rgba(0, 0, 0, 0);
-  border: none;
 }
 
 /* Notifications */
@@ -109,11 +156,6 @@ arrow {
 /* SysInfo */
 .sysinfo {
   padding: 0px 4px;
-}
-
-/* Battery */
-.battery {
-  
 }
 
 /* Bluetooth */
@@ -135,9 +177,39 @@ arrow {
 }
 
 /* Volume */
-.popup-volume .device-box .btn-mute{
-  margin-right: 160px;
-  margin-left: 160px;
+/* one card per device / app, so sink, source and streams are told apart */
+.popup-volume .sink-box,
+.popup-volume .source-box,
+.popup-volume .app-box {
+  background: alpha(@surface, 0.35);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 3px 0px;
+}
+
+.popup-volume .apps-box {
+  margin-top: 6px;
+}
+
+.popup-volume .app-box .title {
+  margin-bottom: 4px;
+}
+
+/* mute buttons: compact icon, red when muted */
+.popup-volume .btn-mute {
+  min-height: 0px;
+  padding: 2px;
+  background: transparent;
+  color: @tertiary;
+}
+
+.popup-volume .btn-mute:hover {
+  background: alpha(@tertiary, 0.15);
+}
+
+.popup-volume .btn-mute:checked {
+  background: @error_container;
+  color: @on_error_container;
 }
 
 /* Network */
@@ -146,16 +218,16 @@ arrow {
 }
 
 /* Clock */
-.popup-clock .calendar {
-  background: @surface_container_highest;  
-  color: @on_surface;
+.popup-clock .calendar,
+.popup-clock .calendar > header {
+  background: transparent;
+  color: @on_secondary_container;
+  border: none;
+  box-shadow: none;
 }
 
-.today {
-  box-shadow: 1px 1px 1px 1px @shadow;
-}
-
-label:selected {
-  background: @tertiary;
-  outline: none;
+.popup-clock .calendar .today {
+  background: @primary;
+  color: @on_primary;
+  border-radius: 8px;
 }
